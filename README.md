@@ -67,13 +67,77 @@ pyyaml
 ## Repository Structure
 
 ```
-├── Assignment4_ObjectDetection.ipynb   # Complete notebook with all 7 tasks
-├── yolo_runs/fruit_yolov8n/            # YOLO training outputs (curves, metrics)
-│   ├── results.png                     # Training loss & metric curves
-│   ├── confusion_matrix.png            # Confusion matrix
-│   ├── BoxPR_curve.png                 # Precision-Recall curve
-│   ├── labels.jpg                      # Dataset label distribution
-│   └── results.csv                     # Per-epoch metrics
 ├── .gitignore
-└── README.md
+├── README.md
+├── Assignment4_ObjectDetection.ipynb
+├── build_notebook_part1.py
+├── yolo26n.pt
+├── yolov8n.pt
+├── fruit_dataset/
+│   ├── train/
+│   │   ├── apple_1.jpg
+│   │   ├── apple_1.xml
+│   │   ├── ...                          # 240 images + 240 XML annotations
+│   │   ├── banana_1.jpg
+│   │   ├── banana_1.xml
+│   │   ├── ...
+│   │   ├── mixed_1.jpg
+│   │   ├── mixed_1.xml
+│   │   ├── ...
+│   │   ├── orange_1.jpg
+│   │   └── orange_1.xml
+│   └── test/
+│       ├── apple_77.jpg
+│       ├── apple_77.xml
+│       ├── ...                          # 60 images + 60 XML annotations
+│       ├── banana_77.jpg
+│       ├── banana_77.xml
+│       ├── ...
+│       ├── mixed_21.jpg
+│       ├── mixed_21.xml
+│       ├── ...
+│       ├── orange_77.jpg
+│       └── orange_77.xml
+├── fruit_yolo/
+│   ├── dataset.yaml
+│   ├── images/
+│   │   ├── train/                       # 192 training images (.jpg)
+│   │   ├── val/                         # 48 validation images (.jpg)
+│   │   └── test/                        # 60 test images (.jpg)
+│   └── labels/
+│       ├── train/                       # 192 YOLO-format labels (.txt)
+│       ├── val/                         # 48 YOLO-format labels (.txt)
+│       └── test/                        # 60 YOLO-format labels (.txt)
+├── yolo_runs/
+│   └── fruit_yolov8n/
+│       ├── args.yaml
+│       ├── results.csv
+│       ├── results.png
+│       ├── confusion_matrix.png
+│       ├── confusion_matrix_normalized.png
+│       ├── BoxF1_curve.png
+│       ├── BoxPR_curve.png
+│       ├── BoxP_curve.png
+│       ├── BoxR_curve.png
+│       ├── labels.jpg
+│       ├── train_batch0.jpg
+│       ├── train_batch1.jpg
+│       ├── train_batch2.jpg
+│       ├── val_batch0_labels.jpg
+│       ├── val_batch0_pred.jpg
+│       ├── val_batch1_labels.jpg
+│       ├── val_batch1_pred.jpg
+│       └── weights/
+│           ├── best.pt
+│           └── last.pt
+└── runs/
+    └── detect/
+        ├── val/
+        │   ├── val_batch0_labels.jpg
+        │   ├── val_batch0_pred.jpg
+        │   ├── val_batch1_labels.jpg
+        │   ├── val_batch2_labels.jpg
+        │   └── val_batch2_pred.jpg
+        ├── val2/
+        └── val3/
 ```

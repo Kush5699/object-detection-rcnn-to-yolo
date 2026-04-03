@@ -1,0 +1,9 @@
+names:
+- apple
+- banana
+- orange
+nc: 3
+path: k:/Deep Learning/Assignments/Assignment-4/fruit_yolo
+test: images/test
+train: images/train
+val: images/val
